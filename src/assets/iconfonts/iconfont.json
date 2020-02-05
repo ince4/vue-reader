@@ -1,0 +1,282 @@
+{
+  "id": "1620057",
+  "name": "reader",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "35520",
+      "name": "小说",
+      "font_class": "icon2",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "71265",
+      "name": "隐藏小说卡icon",
+      "font_class": "hide",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "181902",
+      "name": "读小说",
+      "font_class": "duxiaoshuo",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "436099",
+      "name": "小说",
+      "font_class": "8",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "484794",
+      "name": "书",
+      "font_class": "dlsz",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "840146",
+      "name": "小说",
+      "font_class": "xiaoshuozhuanhuan",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "1119135",
+      "name": "图标1_书、小说",
+      "font_class": "tubiao1shuxiaoshuo",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "1200352",
+      "name": "书",
+      "font_class": "icon25",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "1905879",
+      "name": "小说",
+      "font_class": "xiaoshuo",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "1935642",
+      "name": "小说icon",
+      "font_class": "xiaoshuoicon",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "2191407",
+      "name": "小说阅读",
+      "font_class": "xiaoshuoyuedu",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "2879890",
+      "name": "导航-小说列表",
+      "font_class": "daohang-xiaoshuoliebiao",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "3616850",
+      "name": "小说完本",
+      "font_class": "xiaoshuowanben",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "4169907",
+      "name": "小说",
+      "font_class": "xiaoshuo1",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "4435354",
+      "name": "小说",
+      "font_class": "xiaoshuo2",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "4654506",
+      "name": "小说排行",
+      "font_class": "xiaoshuopaihang",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "5870714",
+      "name": "图标-小红_小说详情",
+      "font_class": "tubiao-xiaohong_xiaoshuoxiangqing",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "6103000",
+      "name": "热门小说",
+      "font_class": "remenxiaoshuo",
+      "unicode": "e74d",
+      "unicode_decimal": 59213
+    },
+    {
+      "icon_id": "6574122",
+      "name": "分享小说-01",
+      "font_class": "fenxiangxiaoshuo-",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7092644",
+      "name": "搜索 (1)",
+      "font_class": "sousuo",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "7313039",
+      "name": "搜索",
+      "font_class": "sousuo1",
+      "unicode": "e7af",
+      "unicode_decimal": 59311
+    },
+    {
+      "icon_id": "7604482",
+      "name": "搜索--1",
+      "font_class": "soushuo",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "7700012",
+      "name": "免费小说-分类",
+      "font_class": "tubiaozhizuomoban",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "7822222",
+      "name": "pc-轻小说",
+      "font_class": "pc-qingxiaoshuo",
+      "unicode": "e70b",
+      "unicode_decimal": 59147
+    },
+    {
+      "icon_id": "8093922",
+      "name": "书",
+      "font_class": "shu",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "8176811",
+      "name": "小说-07",
+      "font_class": "xiaoshuo-",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "8176859",
+      "name": "小说-06",
+      "font_class": "xiaoshuo-1",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "8183562",
+      "name": "小说-08",
+      "font_class": "xiaoshuo-2",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "8628723",
+      "name": "书",
+      "font_class": "shu2",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "8803596",
+      "name": "书",
+      "font_class": "books",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "8998142",
+      "name": "下导航_小说_1",
+      "font_class": "tabduanxian-_tab_ico_-",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "9001775",
+      "name": "下导航_小说_3",
+      "font_class": "xiadaohangtubiaojihe-xingzhuang_tab_ico_-",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "9001793",
+      "name": "下导航_小说_选中_3",
+      "font_class": "xiadaohangtubiaojihe-xingzhuang_tab_ico_-1",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "10024547",
+      "name": "书",
+      "font_class": "shu1",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "10612756",
+      "name": "小说",
+      "font_class": "xiaoshuo3",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "10623955",
+      "name": "小说1",
+      "font_class": "xiaoshuo4",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "12205560",
+      "name": "小说",
+      "font_class": "xiaoshuo5",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "12349037",
+      "name": "小说1",
+      "font_class": "xiaoshuo6",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "12666037",
+      "name": "小说",
+      "font_class": "xiaoshuo7",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    }
+  ]
+}

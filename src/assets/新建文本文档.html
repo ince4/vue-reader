@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function func() {
+  console.log('async function is running!');
+  const num1 = 200;
+  console.log(`num1 is ${num1}`);
+  const num2 = num1+ 100;
+  console.log(`num2 is ${num2}`);
+  const num3 = num2 + 100;
+  console.log(`num3 is ${num3}`);
+}
+
+func();
+console.log('run me before await!');
+
+
+</script>
+</html>
