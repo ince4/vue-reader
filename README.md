@@ -1,4 +1,4 @@
-# vue-order
+# vue-reader
 
 ## Project setup
 ```
