@@ -35,7 +35,6 @@ module.exports = {
    
     // 它支持webPack-dev-server的所有选项
     devServer: {
-      // host: "192.168.10.114",
       host: "localhost",
       port: 8080, // 端口号
       https: false, // https:{type:Boolean}
@@ -47,7 +46,7 @@ module.exports = {
             target: "http://api.zhuishushenqi.com/",
             changeOrigin: true,
             pathRewrite: {
-              '^/api': ''
+              '/api': ''
             }
         },
         "/agent": {
@@ -56,7 +55,14 @@ module.exports = {
           pathRewrite: {
             '^/agent': '/agent'
           }
-        }
+        },
+        // "/book": {
+        //   target: "https://api.zhuishushenqi.com",
+        //   changeOrigin: true,
+        //   pathRewrite: {
+        //     '^/book': ''
+        //   }
+        // }
     }
   }
 }

@@ -11,7 +11,6 @@ import './assets/iconfonts/iconfont.css'
 Vue.use(Mint)
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
-
 new Vue({
   router,
   store,

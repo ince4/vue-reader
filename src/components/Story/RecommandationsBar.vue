@@ -8,9 +8,16 @@
     <!-- 推荐栏 -->
     <div class="swiper">
       <!-- 轮播图 -->
-      <swiper :options="swiperOption" v-if="booksData.length === SLIDER_LENGTH">
-        <swiper-slide :style="'width=22vw'" v-for="(item, index) of booksData" :index="index" :key="index">
-            <img :src="HOST+booksData[index].cover" alt="封面图片" :οnerrοr="errorImg">
+      <swiper :options="swiperOption">
+        <swiper-slide v-for="(item, index) of booksData.slice(0,SLIDER_LENGTH)" :index="index" :key="index">
+            <!-- <router-link :to="{ path: 'book', query: { bookId: booksData[index]._id }}"> -->
+            <img
+            :src="HOST+booksData[index].cover"
+            @touchstart="getStartX($event)"
+            @touchend="goToTheBook($event, index, booksData[index]._id)"
+            :οnerrοr="errorImg"
+            alt="封面图片"/>
+            <!-- </router-link> -->
         </swiper-slide>
       </swiper>
       <div class="bref">
@@ -21,7 +28,6 @@
   </div>
 </template>
 <script>
-import api from '../../api/api.js'
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
@@ -34,23 +40,28 @@ export default {
       HOST: 'https://statics.zhuishushenqi.com',
       SLIDER_LENGTH: 7,
       INITIAL_SLIDE: 3,
+      activeIndex: 3,
       // 被展示的推荐书籍信息
       brefTitle: '',
       brefIntroduction: '',
       errorImg: "this.src = '../../assets/images/ku.png'",
+      startX: 0,
       // vue-awesome-swiper参数
       swiperOption: {
         slidesPerView: 3,
         initialSlide: 3,
-        spaceBetween: 30,
+        spaceBetween: 20,
         centeredSlides: true,
+        slideToClickedSlide: true,
         on: {
           // slide切换时根据activeIndex值改变bref
           slideChangeTransitionEnd: function () {
-            const books = JSON.parse(JSON.stringify(that.booksData))
+            // const books = JSON.parse(JSON.stringify(that.booksData))
+            const books = that.booksData
             if (books[this.activeIndex]) {
               that.brefTitle = books[this.activeIndex].title
-              that.brefIntroduction = books[this.activeIndex].longIntro
+              that.brefIntroduction = books[this.activeIndex].shortIntro
+              that.activeIndex = this.activeIndex
             }
           }
         }
@@ -60,6 +71,23 @@ export default {
   components: {
     swiper,
     swiperSlide
+  },
+  methods: {
+    getStartX: function (e) {
+      this.startX = e.changedTouches[0].pageX
+    },
+    goToTheBook: function (e, index, bookId) {
+      if (index === this.activeIndex && this.startX === e.changedTouches[0].pageX) {
+        this.$router.push({ path: `book/${this.booksData[index]._id}` })
+      }
+    }
+  },
+  watch: {
+    // 初始化时props属性得到父组件axios返回值
+    booksData (val) {
+      this.brefTitle = val[this.INITIAL_SLIDE].title
+      this.brefIntroduction = val[this.INITIAL_SLIDE].shortIntro
+    }
   }
 }
 </script>
@@ -83,15 +111,19 @@ export default {
   }
   // 轮播
   .swiper {
+    touch-action: pan-y;
+    margin: 0 auto;
+    width: 94vw;
     .swiper-container {
       z-index: 0;
+      width: 100vw;
       .swiper-wrapper {
-        margin-left: -33vw;
         .swiper-slide {
           transition: 300ms;
           transform: scale(0.7);
           img {
-            width:26vw;
+            width:22vw;
+            // height:20vh;
           }
         &.swiper-slide-active, .swiper-slide-duplicate-active{
           transform: scale(1);
@@ -106,7 +138,7 @@ export default {
       font-size: 2.2vh;
       font-family: '微软雅黑';
       color: #f06262;
-      padding-left: 3vw;
+      padding-left: 1vw;
     }
     //简介
     p {

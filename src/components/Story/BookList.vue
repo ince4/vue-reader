@@ -6,30 +6,32 @@
     </h2>
     <!-- 热门书籍列表 -->
     <div class="books">
-        <book-view
-        class="book-view"
-        v-for="(item, index) of booksData"
-        :key="index"
-        :index="index"
-        :SRC="HOST+booksData[index].cover">
-          <template v-slot:title>
-            {{booksData[index].title}}
-          </template>
-          <template v-slot:author>
-            {{booksData[index].author}}
-          </template>
-          <template v-slot:intro>
-            {{booksData[index].longIntro}}
-          </template>
-        </book-view>
+      <div class="book" v-for="(item, index) of booksData.slice(0,listLength)" :key="index">
+        <router-link :to="{ path: `book/${booksData[index]._id}`}">
+          <book-view
+          class="book-view"
+          :SRC="HOST+booksData[index].cover">
+            <template v-slot:title>
+              {{booksData[index].title}}
+            </template>
+            <template v-slot:author>
+              {{booksData[index].author}}
+            </template>
+            <template v-slot:intro>
+              {{booksData[index].shortIntro}}
+            </template>
+          </book-view>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import BookView from './BookView'
+import BookView from '../BookView'
 export default {
   props: {
-    booksData: Array
+    booksData: Array,
+    listLength: Number
   },
   data () {
     return {
@@ -38,9 +40,6 @@ export default {
   },
   components: {
     BookView
-  },
-  mounted () {
-    // console.log(this.booksData)
   }
 }
 </script>
@@ -63,11 +62,12 @@ export default {
     }
   }
   .books {
+    margin-top: 1vh;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     .book-view {
-      margin-bottom: 1vh;
+      margin-bottom: 2vh;
     }
   }
 }

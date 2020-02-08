@@ -19,13 +19,13 @@ export default {
    .mint-swipe {
       width: 100vw;
       height: 38vw;
-     .mint-swipe-indicator {
-     opacity: 0.6;
-     background: #808080;
-     &.is-active {
-     background: #f27b13;
-     }
-     }
+      .mint-swipe-indicator {
+        opacity: 0.6;
+        background: #808080;
+      &.is-active {
+        background: #f27b13;
+      }
+      }
   }
 }
 </style>

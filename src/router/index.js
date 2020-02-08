@@ -1,23 +1,35 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Story from '../views/Story.vue'
+import Collection from '../views/Collection'
 Vue.use(VueRouter)
 
 const routes = [
-  // 书架
+  // ä¹¦æž¶
   {
     path: '/',
-    component: Story
-  },
-  {
-    path: '/story',
-    name: 'story',
-    component: Story
+    // component: () => import('../views/Story.vue')
+    component: () => import('../views/Book.vue')
   },
   {
     path: '/collection',
     name: 'collection',
-    component: () => import('../views/Collection.vue')
+    component: Collection
+  },
+  {
+    path: '/story',
+    name: 'story',
+    component: () => import('../views/Story.vue')
+  },
+  {
+    path: '/book/:bookId',
+    name: 'book',
+    meta: { hideTab: true},
+    component: () => import('../views/Book.vue')
+  },
+  {
+    path: '/reader',
+    name: 'reader',
+    component: () => import('../views/Reader.vue')
   }
   // {
   //   path: '/login',

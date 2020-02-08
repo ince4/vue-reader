@@ -1,21 +1,21 @@
 <template>
     <div class="tab-bar">
        <mt-tabbar v-model='selected' fixed>
+            <mt-tab-item id="collection">
+                <h3 class="iconfont icon-shujia"></h3>
+                书架
+            </mt-tab-item>
             <mt-tab-item id="story">
                 <h3 class="iconfont icon-icon25"></h3>
-                故事
+                书城
             </mt-tab-item>
             <mt-tab-item id="login">
                 <img slot="icon" src="../assets/logo.png">
-                儿歌
+                发现
             </mt-tab-item>
             <mt-tab-item id="我的">
-                <img slot="icon" src="../assets/logo.png">
-                游戏
-            </mt-tab-item>
-            <mt-tab-item id="collection">
-                <img slot="icon" src="../assets/logo.png">
-                收集
+                <h3 class="iconfont icon-changxiao"></h3>
+                排行
             </mt-tab-item>
         </mt-tabbar>
     </div>
@@ -24,7 +24,7 @@
 export default {
   data () {
     return {
-      selected: 'story'
+      selected: 'collection'
     }
   },
   watch: {
