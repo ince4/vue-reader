@@ -33,10 +33,10 @@
 
       <book-list :booksData="bookListData1" :listLength="3">
         <template v-slot:icon>
-          <span class="iconfont icon-books"></span>
+          <span class="iconfont icon-changxiaopaiming"></span>
         </template>
         <template v-slot:title>
-          潜力新书
+          畅销精选
         </template>
       </book-list>
       <!--  -->
@@ -46,10 +46,10 @@
 
       <book-swiper :booksData="bookListData2">
         <template v-slot:icon>
-          <span class="iconfont icon-changxiaopaiming"></span>
+          <span class="iconfont icon-books"></span>
         </template>
         <template v-slot:title>
-          畅销精选
+          潜力新书
         </template>
       </book-swiper>
 
@@ -81,7 +81,8 @@ export default {
       recommandationsData: [],
       bookListData1: [],
       bookListData2: [],
-      bookListData3: []
+      bookListData3: [],
+      scroll: 0
     }
   },
   components: {
@@ -97,8 +98,8 @@ export default {
     searchRankingBooksById: function () {
       return [
         api.getRankingBooks(this.rankings.male[8]._id), // 主编力推
-        api.getRankingBooks(this.rankings.male[5]._id), // 潜力新书
-        api.getRankingBooks(this.rankings.male[3]._id), // 畅销精选
+        api.getRankingBooks(this.rankings.male[5]._id), // 畅销精选
+        api.getRankingBooks(this.rankings.male[3]._id), // 潜力新书
         api.getRankingBooks(this.rankings.male[10]._id) // 最近更新
       ]
     }
@@ -114,8 +115,8 @@ export default {
         this.$axios.all(this.searchRankingBooksById())
           .then(this.$axios.spread((recRes, bookList1, bookList2, bookList3) => {
             this.recommandationsData = recRes.data.ranking.books // 主编力推
-            this.bookListData1 = bookList1.data.ranking.books // 潜力新书
-            this.bookListData2 = bookList2.data.ranking.books // 畅销精选
+            this.bookListData1 = bookList1.data.ranking.books // 畅销精选
+            this.bookListData2 = bookList2.data.ranking.books // 潜力新书
             this.bookListData3 = bookList3.data.ranking.books // 最近更新
             this.isLoaded = true
           }))
@@ -123,11 +124,20 @@ export default {
             console.log('Error', res)
           })
       })
+  },
+  activated () {
+    window.scrollTo(0, this.scroll)
+  },
+  beforeRouteLeave (to, from, next) {
+    this.scroll = document.documentElement.scrollTop || document.body.scrollTop
+    next()
   }
 }
 </script>
 <style lang="scss" scoped>
+$tabHeight: 55px;
 .story {
+  height: calc( 93vh - #{$tabHeight} );
   .header {
     z-index: 9;
   }

@@ -1,11 +1,13 @@
 <template>
   <div class="app">
-    <transition :name="toggleAnimation">
+    <transition :name="toggleAnimation" mode="out-in">
       <keep-alive exclude="book,collection">
         <router-view/>
       </keep-alive>
     </transition>
+    <transition :name="toggleAnimation">
       <tab-bar v-if="!$route.meta.hideTab"/>
+    </transition>
   </div>
 </template>
 <script>
@@ -21,7 +23,7 @@ export default {
   },
   watch: {
     $route (to, from) {
-      if (to.name === 'book' || from.name === 'book') {
+      if (to.name === 'book') {
         this.toggleAnimation = 'fade'
       } else {
         this.toggleAnimation = ''
@@ -32,17 +34,17 @@ export default {
 </script>
 <style lang="scss" scoped>
 .app {
-  height: 100vh;
   width: 100vw;
-  background-color:#f6f6f6;
   overflow-x: hidden;
 }
-
-.fade-enter, .fade-leave-to {
+.fade-enter, .fade-leave-to{
   opacity: 0;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: all .3s ease;
+.fade-enter-active {
+  transition: all .1s ease;
+}
+.fade-leave-active {
+  transition: all .2s ease;
 }
 .fade-enter-to, .fade-leave {
    opacity: 1;

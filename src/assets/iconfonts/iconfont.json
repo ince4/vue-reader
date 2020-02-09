@@ -20,6 +20,13 @@
       "unicode_decimal": 58944
     },
     {
+      "icon_id": "82419",
+      "name": "加号",
+      "font_class": "iconjia",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
       "icon_id": "181902",
       "name": "读小说",
       "font_class": "duxiaoshuo",
@@ -83,6 +90,20 @@
       "unicode_decimal": 58926
     },
     {
+      "icon_id": "1019095",
+      "name": "勾",
+      "font_class": "toast",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "1035520",
+      "name": "勾",
+      "font_class": "gou",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
       "icon_id": "1119135",
       "name": "图标1_书、小说",
       "font_class": "tubiao1shuxiaoshuo",
@@ -102,6 +123,13 @@
       "font_class": "tuijian1",
       "unicode": "e65c",
       "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "1289668",
+      "name": "勾",
+      "font_class": "gou1",
+      "unicode": "e614",
+      "unicode_decimal": 58900
     },
     {
       "icon_id": "1836014",
@@ -130,6 +158,13 @@
       "font_class": "changxiao",
       "unicode": "e60f",
       "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "2102128",
+      "name": "发现",
+      "font_class": "aiguifan",
+      "unicode": "e617",
+      "unicode_decimal": 58903
     },
     {
       "icon_id": "2106969",
@@ -174,6 +209,13 @@
       "unicode_decimal": 58917
     },
     {
+      "icon_id": "3438124",
+      "name": "指南针",
+      "font_class": "zhinanzhen",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
       "icon_id": "3616850",
       "name": "小说完本",
       "font_class": "xiaoshuowanben",
@@ -207,6 +249,20 @@
       "font_class": "xiaoshuopaihang",
       "unicode": "e629",
       "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "4856373",
+      "name": "指南针",
+      "font_class": "ziyuan",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "5053551",
+      "name": "勾",
+      "font_class": "gou2",
+      "unicode": "e623",
+      "unicode_decimal": 58915
     },
     {
       "icon_id": "5870714",
@@ -284,6 +340,13 @@
       "font_class": "tubiaozhizuomoban",
       "unicode": "e601",
       "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "7784070",
+      "name": "V2.3勾",
+      "font_class": "gou3",
+      "unicode": "e637",
+      "unicode_decimal": 58935
     },
     {
       "icon_id": "7822222",
@@ -377,6 +440,13 @@
       "unicode_decimal": 58971
     },
     {
+      "icon_id": "9378315",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
       "icon_id": "9452640",
       "name": "完结备注",
       "font_class": "wanjiebeizhu",
@@ -440,6 +510,13 @@
       "unicode_decimal": 58939
     },
     {
+      "icon_id": "11847337",
+      "name": "指南针",
+      "font_class": "zhinanzhen1",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
       "icon_id": "11925328",
       "name": "畅销数量",
       "font_class": "bingfashu",
@@ -487,6 +564,13 @@
       "font_class": "wanjie2",
       "unicode": "e811",
       "unicode_decimal": 59409
+    },
+    {
+      "icon_id": "12780954",
+      "name": "加号",
+      "font_class": "pictrue-add",
+      "unicode": "e626",
+      "unicode_decimal": 58918
     }
   ]
 }
