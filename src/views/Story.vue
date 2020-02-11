@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <loading v-if="!isLoaded"/>
-    <div class="story" v-else>
+    <div class="story" ref="story" v-else>
       <!-- Header -->
       <m-header>
         <template v-slot:left>
@@ -126,23 +126,26 @@ export default {
       })
   },
   activated () {
-    window.scrollTo(0, this.scroll)
+    if (this.scroll !== 0) {
+      this.$refs.story.scrollTop = this.scroll
+    }
   },
   beforeRouteLeave (to, from, next) {
-    this.scroll = document.documentElement.scrollTop || document.body.scrollTop
+    this.scroll = this.$refs.story.scrollTop
+    // console.log(this.scroll)
     next()
   }
 }
 </script>
 <style lang="scss" scoped>
-$tabHeight: 55px;
 .story {
-  height: calc( 93vh - #{$tabHeight} );
+  touch-action: pan-y;
+  @include wrap-scroll;
   .header {
     z-index: 9;
   }
   .ads {
-    padding-top: 8.3vh;
+    padding-top: 1.5vh;
     img{
       display: block;
       margin: 0 auto;

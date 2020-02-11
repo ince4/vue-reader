@@ -7,15 +7,23 @@
             <span v-if="!collected">加入书架</span>
             <span v-else>已在书架</span>
         </button>
-        <button id="read">立即阅读</button>
+          <button id="read" @touchend="goToReader">立即阅读</button>
       </div>
   </div>
 </template>
 <script>
 export default {
+  props: {
+    bookId: String
+  },
   data () {
     return {
       collected: false
+    }
+  },
+  methods: {
+    goToReader: function () {
+      this.$router.push({ name: 'reader', query: { bookId: this.bookId,chapter: 1 } })
     }
   }
 }

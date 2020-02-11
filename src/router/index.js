@@ -23,12 +23,13 @@ const routes = [
   {
     path: '/book/:bookId',
     name: 'book',
-    meta: { hideTab: true},
+    meta: { hideTab: true },
     component: () => import('../views/Book.vue')
   },
   {
     path: '/reader',
     name: 'reader',
+    meta: { hideTab: true },
     component: () => import('../views/Reader.vue')
   }
   // {

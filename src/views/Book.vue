@@ -10,19 +10,19 @@
     <div class="wrapper" v-else>
       <!-- 书籍基本信息 -->
       <div class="basic-info">
-        <!-- 封面 -->
-        <img class="cover" :src="HOST+bookData.cover"/>
-        <!-- 书籍状态 -->
-        <div class="info">
-          <h2 class="title">{{ bookData.title }}</h2>
-          <h3 class="author">{{ bookData.author }} 著</h3>
-          <p class="book-status">
-            {{ (bookData.wordCount/10000).toFixed(1) }}万字 / {{bookData.isSerial ? '连载中' : '已完结'}}
-            <br>人气{{ (bookData.latelyFollower/10000).toFixed(1) }}万 #{{bookData.majorCate}}#
-          </p>
-        </div>
-        <!-- blur -->
-        <div class="back" :style="{'backgroundImage':`url(${HOST}${bookData.cover})`}"></div>
+          <!-- 封面 -->
+          <img class="cover" :src="HOST+bookData.cover"/>
+          <!-- 书籍状态 -->
+          <div class="info">
+            <h2 class="title">{{ bookData.title }}</h2>
+            <h3 class="author">{{ bookData.author }} 著</h3>
+            <p class="book-status">
+              {{ (bookData.wordCount/10000).toFixed(1) }}万字 / {{bookData.isSerial ? '连载中' : '已完结'}}
+              <br>人气{{ (bookData.latelyFollower/10000).toFixed(1) }}万 #{{bookData.majorCate}}#
+            </p>
+          </div>
+          <!-- blur -->
+          <div class="back" :style="{'backgroundImage':`url(${HOST}${bookData.cover})`}"></div>
       </div>
       <!-- 书籍数据 -->
       <div class="data-bar">
@@ -60,18 +60,19 @@
       <!-- 目录 -->
       <div class="catalogue">
         <span class="cat">目录</span>
-        <span class="last-chapter">{{bookData.lastChapter}}</span>
+        <span class="last-chapter">{{bookData.updated}} / {{bookData.lastChapter}}</span>
         <span class="iconfont icon-ICon-"/>
       </div>
     </div>
     <!-- 底部 fixed -->
-    <bottom/>
+    <bottom :bookId="bookData._id"/>
   </div>
 </template>
 <script>
 import Loading from '../components/Loading'
 import Header from '../components/Header'
 import Bottom from '../components/Book/Bottom'
+import { getUpdateMsg } from '../js/dateFtt.js'
 import api from '../api/api.js'
 export default {
   name: 'book',
@@ -98,17 +99,18 @@ export default {
       .then((res) => {
         this.bookData = res.data
         this.isLoaded = true
+        this.bookData.updated = getUpdateMsg(this.bookData.updated)
       })
   }
 }
 </script>
 <style lang="scss" scoped>
 .book {
-  height: 85vh;
+  @include wrap-scroll;
   background: #f8f8f8;
+  height: calc( 92vh - #{$HeaderHeight} );
   .basic-info {
-    margin-top: 7vh;
-    padding-top: 3vh;
+    padding-top: 2vh;
     padding-left: 4vw;
     position: relative;
     .cover {
@@ -157,25 +159,27 @@ export default {
       }
     }
     .back {
-      height: 25.4vh;
+      height: 24.4vh;
       width: 100vw;
       background-repeat: no-repeat;
       background-size: cover;
       background-position-y: 10%;
-      filter:blur(4px);
+      filter:blur(2px);
+      // transform: scale(1.1);
       z-index: 0;
       position: absolute;
-      top: -1vh;
+      top: 0vh;
       left: 0;
       opacity: .6;
       background-color: #000000b0;
       background-blend-mode:multiply;
+      border: 0;
     }
   }
   .data-bar {
-    border-bottom: 1px solid #ebebeb;
+    padding-top: 2vh;
+    // border-bottom: 1px solid #ebebeb;
     height: 10vh;
-    margin-top: 1vh;
     width: 100vw;
     position: relative;
     z-index: 1;
@@ -204,7 +208,6 @@ export default {
     }
   }
   .intro {
-    // height: 14vh;
     padding: 3vh 5vw;
     border-bottom: 1px solid #ebebeb;
     position: relative;
@@ -229,7 +232,6 @@ export default {
       bottom: 5%;
       &.longIntro {
         transform: rotate(180deg);
-        bottom: 5%;
       }
     }
   }
@@ -251,7 +253,13 @@ export default {
       text-overflow: ellipsis;
       overflow: hidden;
       margin-left: auto;
-      margin-right: 0;
+      margin-right: 2vw;
+      width: 65vw;
+      word-wrap: nowrap;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-align: right;
     }
     .iconfont {
       color: #999999;

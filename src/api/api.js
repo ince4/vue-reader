@@ -12,5 +12,14 @@ export default {
   },
   getRankingBooks (id) {
     return axios.get(`api/ranking/${id}`)
+  },
+  getBookSources (id) {
+    return axios.get(`api/atoc?view=summary&book=${id}`)
+  },
+  getBookChapters (id) {
+    return axios.get(`api/atoc/${id}?view=chapters`)
+  },
+  getChapterContent (link) {
+    return axios.get(`chapter/${encodeURIComponent(link)}`)
   }
 }

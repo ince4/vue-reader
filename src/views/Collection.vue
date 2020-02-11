@@ -21,6 +21,9 @@ export default {
     background: #f4f4f4;
     .collection-empty {
       padding-top: 18vh;
+      overflow: hidden;
+      // $tabHeight: 55px;
+      // height: calc( 100vh - #{$tabHeight} );
       .neko-img {
       height: 40vh;
       background: url('../assets/images/ojigi_animal_neko.png') no-repeat;

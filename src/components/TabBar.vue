@@ -29,14 +29,14 @@ export default {
   },
   watch: {
     selected (to, from) {
-      this.$router.push(`${to}`)
+      this.$router.push(`/${to}`)
     }
   }
 }
 </script>>
 <style lang="scss" scoped>
   .tab-bar{
-    height: 55px;
+    height: $tabBarHeight;
     .mint-tabbar {
       box-shadow: 0 -2px 10px 0px rgba(0, 0, 0, 0.08);
       .mint-tab-item {

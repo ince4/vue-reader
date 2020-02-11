@@ -47,7 +47,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .book-swiper {
-  margin-bottom: 2vh;
+  margin-top: 2vh;
   h2 {
     height: 6vh;
     margin-left: 2vw;
@@ -67,7 +67,7 @@ export default {
   // 轮播
   .swiper {
     touch-action: pan-y;
-    width: 95vw;
+    width: 92vw;
     margin: 0 auto;
     .swiper-container {
       .swiper-wrapper {

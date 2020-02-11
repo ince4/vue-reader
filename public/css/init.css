@@ -28,7 +28,6 @@ body {
 	line-height: 1;
 	/* overflow-x: hidden; */
 	background-color:#f6f6f6;
-	height: 100vh;
 }
 ol, ul, li {
 	list-style: none;
@@ -46,7 +45,6 @@ table {
 	border-spacing: 0;
 }
 html, body {
-	height: auto;
   }
 a {
 	text-decoration: none;

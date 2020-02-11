@@ -21,10 +21,10 @@ export default {
 .header {
     ::v-deep
   .mint-header {
-    height: 7vh;
+    height: $HeaderHeight;
+    z-index: 5;
     background: #f94040;
     box-shadow: 0 2px 6px 0px #f94040;
-    z-index: 5;
     .mint-header-title {
       font-weight: bold;
       font-size: 2.4vh;

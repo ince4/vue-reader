@@ -56,13 +56,20 @@ module.exports = {
             '^/agent': '/agent'
           }
         },
-        // "/book": {
-        //   target: "https://api.zhuishushenqi.com",
-        //   changeOrigin: true,
-        //   pathRewrite: {
-        //     '^/book': ''
-        //   }
-        // }
+        "/chapter": {
+          target: "https://chapter2.zhuishushenqi.com",
+          changeOrigin: true,
+          pathRewrite: {
+            '^/chapter': '/chapter'
+          }
+        },
+    }
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "./src/assets/styles/_variable.scss";`
+      }
     }
   }
 }

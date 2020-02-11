@@ -16,7 +16,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .swiper {
-   touch-action: pan-y;
    .mint-swipe {
       width: 100vw;
       height: 38vw;
