@@ -97,8 +97,8 @@ export default {
     // 请求相应排行榜下的书籍
     searchRankingBooksById: function () {
       return [
-        api.getRankingBooks(this.rankings.male[8]._id), // 主编力推
-        api.getRankingBooks(this.rankings.male[5]._id), // 畅销精选
+        api.getRankingBooks(this.rankings.male[5]._id), // 主编力推
+        api.getRankingBooks(this.rankings.male[8]._id), // 畅销精选
         api.getRankingBooks(this.rankings.male[3]._id), // 潜力新书
         api.getRankingBooks(this.rankings.male[10]._id) // 最近更新
       ]

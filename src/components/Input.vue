@@ -31,9 +31,6 @@ export default {
     errorMessage: String
   },
   methods: {
-    fuck () {
-      alert('asd')
-    }
   }
 }
 </script>>

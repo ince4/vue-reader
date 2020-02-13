@@ -1,7 +1,6 @@
 $tabBarHeight: 55px;
 $HeaderHeight: 7vh;
 $backgroundColor: #f6f6f6;
-// 定位为fixed的组件上不出现滚动条
 @mixin wrap-scroll {
   overflow-y: scroll;
   overflow-x: hidden;

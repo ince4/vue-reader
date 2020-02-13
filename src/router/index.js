@@ -8,27 +8,27 @@ const routes = [
   {
     path: '/',
     // component: () => import('../views/Story.vue')
-    component: () => import('../views/Book.vue')
-  },
-  {
-    path: '/collection',
-    name: 'collection',
-    component: Collection
-  },
-  {
-    path: '/story',
-    name: 'story',
     component: () => import('../views/Story.vue')
   },
   {
-    path: '/book/:bookId',
+    name: 'collection',
+    path: '/collection',
+    component: Collection
+  },
+  {
+    name: 'story',
+    path: '/story',
+    component: () => import('../views/Story.vue')
+  },
+  {
     name: 'book',
+    path: '/book/:bookId',
     meta: { hideTab: true },
     component: () => import('../views/Book.vue')
   },
   {
-    path: '/reader',
     name: 'reader',
+    path: '/reader',
     meta: { hideTab: true },
     component: () => import('../views/Reader.vue')
   }
@@ -45,6 +45,13 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.matched.length ===0) {  //如果未匹配到路由
+    from.name ? next({ name:from.name }) : next('/');   //如果上级也未匹配到路由则跳转登录页面，如果上级能匹配到则转上级路由
+  } else {
+    next();    //如果匹配到正确跳转
+  }
+});
 // router.beforeEach((to, from, next) => {
 //   const isLogin = localStorage.isLogged
 //   if (to.path === '/login') {

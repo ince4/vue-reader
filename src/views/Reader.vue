@@ -1,35 +1,63 @@
 <template>
   <div class="reader">
+    <!-- header -->
+    <m-header v-show="onSetting" :title="bookTitle">
+       <template v-slot:left>
+          <span class="iconfont icon-fanhui" @touchend="$router.go(-1)"/>
+      </template>
+    </m-header>
     <loading v-if="!isLoaded"/>
-    <article v-else>
-      <h1>{{cpTitle}}</h1>
-      <p
+    <!-- 章节内容 -->
+    <article v-else @click="setting"  ref="article">
+      <h1 :class="{'inDark':darkBackground,'':!darkBackground}" :style="{fontSize:fontSize+4+'px'}">
+        {{cpTitle}}
+      </h1>
+      <p 
+      :style="{fontSize:fontSize+'px'}"
       class="content"
-      v-for="(item, index) of cpContent" 
-      :key="index" 
+      :class="{'inDark':darkBackground,'':!darkBackground}"
+      v-for="(item, index) of cpContent"
+      :key="index"
       v-html="cpContent[index]">
       </p>
     </article>
+    <!-- 底部操作面板 -->
+    <settings
+    ref="setting"
+    v-show="onSetting"
+    :fontSize="fontSize"
+    @chapterChange="chapterChange"
+    @colorChange="colorChange"
+    @fontSizeChange="fontSizeChange"
+    >
+    </settings>
   </div>
 </template>
 <script>
-// import Loading from '../components/Loading'
 import api from '../api/api.js'
 import Loading from '../components/Loading'
+import Header from '../components/Header'
+import Settings from '../components/Reader/Settings'
 export default {
   name: 'reader',
-  // this.$route.params.bookId
   data () {
     return {
+      bookTitle: '',
       chapters: [],
       cpTitle: '',
       cpIndex: this.$route.query.chapter - 1,
       cpContent: [],
-      isLoaded: false
+      isLoaded: false,
+      onSetting: false,
+      darkBackground: false,
+      displayChanging: false,
+      fontSize: 16
     }
   },
   components: {
-    Loading
+    Loading,
+    Settings,
+    'm-header': Header
   },
   created () {
     this.getBookById(this.$route.query.bookId)
@@ -39,6 +67,7 @@ export default {
     getBookById: function (bookId) {
       api.getBookById(bookId)
         .then(res => {
+          this.bookTitle = res.data.title
           this.getBookSources(bookId)
         })
     },
@@ -57,20 +86,45 @@ export default {
           this.getChapterContent(this.chapters[this.cpIndex].link)
         })
     },
+    // 获取章节内容
     getChapterContent: function (link) {
       api.getChapterContent(link)
         .then(res => {
-          if(res.data.chapter.isVip) {
+          if (res.data.chapter.isVip) {
             res.data.chapter.cpContent = '本章为付费章节，请至正版阅读平台订阅'
           }
           this.cpContent = res.data.chapter.cpContent.split('\r\n')
           this.cpContent = res.data.chapter.cpContent.split('\n')
-          this.cpContent = this.cpContent.map(item =>  `<p>${item.trim()}</p>`)
+          this.cpContent = this.cpContent.map(item => `${item.trim()}`)
           // this.cpContent = this.cpContent.join('')
-          console.log(this.cpContent)
           this.cpTitle = res.data.chapter.title
           this.isLoaded = true
         })
+        .catch(res => {
+          this.isLoaded = true
+          res.data.chapter.cpContent = '获取章节信息失败'
+        })
+    },
+    setting () {
+      this.onSetting = !this.onSetting
+      this.$refs.setting.showOptions()
+    },
+    chapterChange (to) {
+      if (this.cpIndex + to >= 0 && this.cpIndex + to < this.chapters.length - 1) {
+        this.cpIndex += to
+        this.getChapterContent(this.chapters[this.cpIndex].link)
+      }
+    },
+    colorChange (backgroundColor) {
+      this.$refs.article.style.backgroundColor = backgroundColor
+      if (backgroundColor === '#2c2c2c') {
+        this.darkBackground = true
+      } else {
+        this.darkBackground = false
+      }
+    },
+    fontSizeChange (fontSize) {
+      this.fontSize = fontSize
     }
   }
 }
@@ -79,13 +133,25 @@ export default {
 .reader {
   // background: $backgroundColor;
   background: rgb(238, 230, 221);
+   ::v-deep
+  .mint-header {
+    background-color:rgba(50, 51, 52, 0.9);
+    box-shadow: 0 1px 2px 0px rgba(50, 51, 52, 0.9);
+    z-index: 3;
+  }
   article {
-    padding: 4vh 5vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 3vh 5vw;
     line-height: 1.5;
     h1 {
       font-weight: 400;
       color: #333;
       font-size: 20px;
+      margin-bottom: 2vh;
+      &.inDark {
+        color: rgb(170, 170, 170);
+      }
     }
     .content {
       font-size: 16px;
@@ -93,8 +159,10 @@ export default {
       text-indent: 2em;
       text-align: justify;
       margin: .4em;
+      &.inDark {
+        color: rgb(170, 170, 170);
+      }
     }
   }
-  
 }
 </style>
