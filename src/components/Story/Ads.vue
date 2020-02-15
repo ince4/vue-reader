@@ -16,6 +16,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .swiper {
+  ::v-deep
    .mint-swipe {
       width: 100vw;
       height: 38vw;

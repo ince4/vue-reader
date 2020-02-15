@@ -5,7 +5,7 @@
       <!-- Header -->
       <m-header>
         <template v-slot:left>
-          书籍阅读
+          书籍推荐
         </template>
         <template v-slot:right>
           <span class="iconfont icon-sousuo1"/>
@@ -68,7 +68,7 @@
 import Header from '../components/Header'
 import Ads from '../components/Story/Ads'
 import RecommandationsBar from '../components/Story/RecommandationsBar'
-import BookList from '../components/Story/BookList'
+import BookList from '../components/BookList'
 import BookSwiper from '../components/Story/BookSwiper'
 import Loading from '../components/Loading'
 import api from '../api/api.js'

@@ -63,9 +63,9 @@
         <span class="last-chapter">{{bookData.updated}} / {{bookData.lastChapter}}</span>
         <span class="iconfont icon-ICon-"/>
       </div>
+      <!-- 底部 fixed -->
+      <bottom :bookData="bookData"/>
     </div>
-    <!-- 底部 fixed -->
-    <bottom :bookId="bookData._id"/>
   </div>
 </template>
 <script>

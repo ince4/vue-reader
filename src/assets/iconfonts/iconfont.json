@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "555590",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "7947945",
+      "name": "发现",
+      "font_class": "faxian1",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "8579943",
+      "name": "发现",
+      "font_class": "faxian2",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "8943822",
+      "name": "发现",
+      "font_class": "faxian3",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "9822317",
+      "name": "发现",
+      "font_class": "faxian4",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
       "icon_id": "930669",
       "name": "目录",
       "font_class": "mulu",
@@ -95,41 +130,6 @@
       "font_class": "pictrue-add",
       "unicode": "e626",
       "unicode_decimal": 58918
-    },
-    {
-      "icon_id": "2102128",
-      "name": "发现",
-      "font_class": "aiguifan",
-      "unicode": "e617",
-      "unicode_decimal": 58903
-    },
-    {
-      "icon_id": "3438124",
-      "name": "指南针",
-      "font_class": "zhinanzhen",
-      "unicode": "e62f",
-      "unicode_decimal": 58927
-    },
-    {
-      "icon_id": "4856373",
-      "name": "指南针",
-      "font_class": "ziyuan",
-      "unicode": "e63f",
-      "unicode_decimal": 58943
-    },
-    {
-      "icon_id": "9378315",
-      "name": "发现",
-      "font_class": "faxian",
-      "unicode": "e655",
-      "unicode_decimal": 58965
-    },
-    {
-      "icon_id": "11847337",
-      "name": "指南针",
-      "font_class": "zhinanzhen1",
-      "unicode": "e638",
-      "unicode_decimal": 58936
     },
     {
       "icon_id": "521798",

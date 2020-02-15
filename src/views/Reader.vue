@@ -12,7 +12,7 @@
       <h1 :class="{'inDark':darkBackground,'':!darkBackground}" :style="{fontSize:fontSize+4+'px'}">
         {{cpTitle}}
       </h1>
-      <p 
+      <p
       :style="{fontSize:fontSize+'px'}"
       class="content"
       :class="{'inDark':darkBackground,'':!darkBackground}"

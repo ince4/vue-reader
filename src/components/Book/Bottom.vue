@@ -4,26 +4,38 @@
         <button id="store-up" :class="{'collected':collected,'':!collected}">
             <span class="iconfont"
             :class="{'icon-gou':collected, 'icon-pictrue-add':!collected}"/>
-            <span v-if="!collected">加入书架</span>
-            <span v-else>已在书架</span>
+            <span v-if="!collected" @click="storeUp">加入书架</span>
+            <span v-else @click="cancel">已在书架</span>
         </button>
           <button id="read" @touchend="goToReader">立即阅读</button>
       </div>
+      <!-- {{bookData}} -->
   </div>
 </template>
 <script>
 export default {
   props: {
-    bookId: String
+    bookData: Object
   },
-  data () {
-    return {
-      collected: false
+  created () {
+    this.$store.commit('isCollected', this.bookData)
+  },
+  computed: {
+    collected () {
+      return this.$store.state.collected
     }
   },
   methods: {
     goToReader: function () {
-      this.$router.push({ name: 'reader', query: { bookId: this.bookId,chapter: 1 } })
+      this.$router.push({ name: 'reader', query: { bookId: this.bookData, chapter: 1 } })
+    },
+    storeUp: function () {
+      this.$store.commit('addToCollections', this.bookData)
+      console.log(this.$store.state.bookCollections)
+    },
+    cancel: function () {
+      this.$store.commit('removeFromCollections', this.bookData)
+      console.log(this.$store.state.bookCollections)
     }
   }
 }

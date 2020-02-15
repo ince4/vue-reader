@@ -10,7 +10,7 @@
                 书城
             </mt-tab-item>
             <mt-tab-item id="login">
-                <img slot="icon" src="../assets/logo.png">
+                <h3 class="iconfont icon-faxian4"></h3>
                 发现
             </mt-tab-item>
             <mt-tab-item id="我的">

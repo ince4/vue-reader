@@ -1,18 +1,41 @@
 <template>
   <div class="collection">
-      <div class="collection-empty">
+      <!-- <loading v-if="!isLoaded"/> -->
+      <!-- 书架为空 -->
+      <!-- <div class="collection-empty" v-else-if="isEmpty">
         <div class="neko-img"> </div>
-        <p>暂无收集！<br>请去发现更多内容吧</p>
-      </div>
+        <p>书架为空！<br>请去发现更多内容吧</p>
+      </div> -->
+      <!--  -->
+      <book-list :booksData="bookData" :listLength="bookData.length"/>
+      {{bookData.length}}
   </div>
 </template>
 <script>
+import Loading from '../components/Loading'
+import BookList from '../components/BookList'
 export default {
   name: 'collection',
   data () {
     return {
-      me: ''
+      me: '',
+      // isLoaded: false
+      isLoaded: true
     }
+  },
+  computed: {
+    bookData () {
+      let collections = this.$store.state.bookCollections
+      collections = [...collections.values()]
+      return collections
+    },
+    isEmpty () {
+      return !this.$store.state.bookCollections.length
+    }
+  },
+  components: {
+    Loading,
+    BookList
   }
 }
 </script>

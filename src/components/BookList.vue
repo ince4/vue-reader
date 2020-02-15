@@ -18,7 +18,7 @@
               {{booksData[index].author}}
             </template>
             <template v-slot:intro>
-              {{booksData[index].shortIntro}}
+              {{booksData[index].shortIntro}}{{booksData[index].longIntro}}
             </template>
           </book-view>
         </router-link>
@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import BookView from '../BookView'
+import BookView from './BookView'
 export default {
   props: {
     booksData: Array,

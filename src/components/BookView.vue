@@ -1,6 +1,6 @@
 <template>
   <div class="book-view">
-      <img class="cover" :src="SRC" alt="书籍封面">
+      <img class="cover" :src="SRC" alt="书籝尝面">
       <div class="info">
         <h2 class="title"><slot name="title"/></h2>
         <h3 class="author"><slot name="author"/></h3>
