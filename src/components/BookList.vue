@@ -18,7 +18,7 @@
               {{booksData[index].author}}
             </template>
             <template v-slot:intro>
-              {{booksData[index].shortIntro}}{{booksData[index].longIntro}}
+              {{booksData[index].shortIntro}}
             </template>
           </book-view>
         </router-link>

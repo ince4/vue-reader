@@ -131,8 +131,9 @@ export default {
     }
   },
   beforeRouteLeave (to, from, next) {
-    this.scroll = this.$refs.story.scrollTop
-    // console.log(this.scroll)
+    if (this.scroll !== 0) {
+      this.scroll = this.$refs.story.scrollTop
+    }
     next()
   }
 }

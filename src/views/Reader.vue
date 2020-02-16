@@ -48,7 +48,7 @@ export default {
       cpIndex: this.$route.query.chapter - 1,
       cpContent: [],
       isLoaded: false,
-      onSetting: false,
+      onSetting: true,
       darkBackground: false,
       displayChanging: false,
       fontSize: 16

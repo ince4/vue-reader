@@ -6,7 +6,9 @@
       </keep-alive>
     </transition>
     <transition :name="toggleAnimation">
-      <tab-bar v-if="!$route.meta.hideTab"/>
+      <keep-alive>
+        <tab-bar v-if="!$route.meta.hideTab"/>
+      </keep-alive>
     </transition>
   </div>
 </template>

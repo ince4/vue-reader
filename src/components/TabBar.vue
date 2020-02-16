@@ -27,8 +27,15 @@ export default {
       selected: 'collection'
     }
   },
+  beforeMount () {
+    if (this.$route.path !== '/collection') {
+      this.selected = 'collection'
+      this.$router.push('/collection')
+    }
+  },
   watch: {
     selected (to, from) {
+      this.selected = to
       this.$router.push(`/${to}`)
     }
   }

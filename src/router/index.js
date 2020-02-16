@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     // component: () => import('../views/Story.vue')
-    component: () => import('../views/Collection.vue')
+    component: Collection
   },
   {
     name: 'collection',

@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "433839",
+      "name": "check_box",
+      "font_class": "checkbox",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "3211462",
+      "name": "check_box",
+      "font_class": "check_box",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "4309162",
+      "name": "check-box",
+      "font_class": "check-box",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "10175791",
+      "name": "check-box",
+      "font_class": "check-box1",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "8066499",
+      "name": "批量管理",
+      "font_class": "piliangguanli",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
       "icon_id": "555590",
       "name": "发现",
       "font_class": "faxian",
