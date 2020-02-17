@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "847381",
+      "name": "垃圾桶",
+      "font_class": "lajitong-copy",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "4242807",
+      "name": "全选",
+      "font_class": "quanxuan",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "4971050",
+      "name": "全选",
+      "font_class": "quanxuan1",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "9617580",
+      "name": "全选",
+      "font_class": "quanxuan2",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "11529856",
+      "name": "全选",
+      "font_class": "zu",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "13016974",
+      "name": "垃圾桶 删除",
+      "font_class": "lajitongshanchu",
+      "unicode": "fdf0",
+      "unicode_decimal": 65008
+    },
+    {
       "icon_id": "433839",
       "name": "check_box",
       "font_class": "checkbox",
