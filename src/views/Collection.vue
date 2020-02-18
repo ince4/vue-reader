@@ -12,7 +12,7 @@
         <m-header>
           <template v-slot:left>
             <span v-if="!isEditing">我的书架</span>
-            <span v-else class="iconfont icon-fanhui" @click="editing"></span>
+            <span v-else class="iconfont icon-fanhui" @click="editing"/>
           </template>
           <template v-slot:right>
             <span v-if="!isEditing" @click="popUp" class="iconfont icon-xiazai9"/>

@@ -69,6 +69,7 @@ export default {
         .then(res => {
           this.bookTitle = res.data.title
           this.getBookSources(bookId)
+          // console.log('书籍信息', res.data)
         })
     },
     // 获取书源
@@ -76,6 +77,7 @@ export default {
       api.getBookSources(bookId)
         .then(res => {
           this.getBookChapters(res.data[0]._id)
+          // console.log('获取书源', res.data)
         })
     },
     // 根据书源获取章节
@@ -84,6 +86,7 @@ export default {
         .then(res => {
           this.chapters = res.data.chapters
           this.getChapterContent(this.chapters[this.cpIndex].link)
+          // console.log('获取章节', res.data)
         })
     },
     // 获取章节内容
@@ -99,6 +102,7 @@ export default {
           // this.cpContent = this.cpContent.join('')
           this.cpTitle = res.data.chapter.title
           this.isLoaded = true
+          // console.log('章节内容', res.data)
         })
         .catch(res => {
           this.isLoaded = true

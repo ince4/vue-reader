@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <transition :name="toggleAnimation" mode="out-in">
-      <keep-alive exclude="book,collection,reader">
+      <keep-alive exclude="book,collection,reader,catalogue">
         <router-view/>
       </keep-alive>
     </transition>

@@ -58,11 +58,13 @@
         @click="lineClampToggle"/>
       </div>
       <!-- 目录 -->
-      <div class="catalogue">
-        <span class="cat">目录</span>
-        <span class="last-chapter">{{bookData.updated}} / {{bookData.lastChapter}}</span>
-        <span class="iconfont icon-ICon-"/>
-      </div>
+      <router-link :to="{name: 'catalogue',query:{bookId: this.$route.params.bookId }}">
+        <div class="catalogue">
+          <span class="cat">目录</span>
+          <span class="last-chapter">{{bookData.updated}} / {{bookData.lastChapter}}</span>
+          <span class="iconfont icon-ICon-"/>
+        </div>
+      </router-link>
       <!-- 底部 fixed -->
       <bottom :bookData="bookData"/>
     </div>
@@ -100,6 +102,7 @@ export default {
         this.bookData = res.data
         this.isLoaded = true
         this.bookData.updated = getUpdateMsg(this.bookData.updated)
+        console.log(res.data)
       })
   }
 }

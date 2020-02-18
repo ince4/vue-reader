@@ -31,6 +31,12 @@ const routes = [
     path: '/reader',
     meta: { hideTab: true },
     component: () => import('../views/Reader.vue')
+  },
+  {
+    name: 'catalogue',
+    path: '/catalogue',
+    meta: { hideTab: true },
+    component: () => import('../views/Catalogue.vue')
   }
   // {
   //   path: '/login',

@@ -8,7 +8,7 @@
       </div>
       <!-- 选项按钮 -->
       <div class="options" v-show="!displayChanging">
-          <div class="items">
+          <div class="items" @click="goToCatalogue">
             <span class="iconfont icon-mulu"></span>
             <span class="text">目录</span>
           </div>
@@ -63,7 +63,7 @@ export default {
       this.displayChanging = true
     },
     showOptions () {
-        this.displayChanging = false
+      this.displayChanging = false
     },
     colorChange (e) {
       if (e.target.nodeName === 'INPUT') {
@@ -77,6 +77,11 @@ export default {
       } else {
         console.log('no')
       }
+    },
+    goToCatalogue () {
+      this.$router.push({
+        name: 'catalogue',
+        query: { bookId: this.$route.query.bookId } })
     }
   }
 }
@@ -181,4 +186,5 @@ export default {
     }
   }
 }
+
 </style>

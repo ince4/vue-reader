@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     goToReader: function () {
-      this.$router.push({ name: 'reader', query: { bookId: this.bookData, chapter: 1 } })
+      this.$router.push({ name: 'reader', query: { bookId: this.bookData._id, chapter: 1 } })
     },
     storeUp: function () {
       this.$store.commit('addToCollections', this.bookData)
