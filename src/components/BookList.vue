@@ -67,7 +67,7 @@ export default {
     flex-direction: column;
     flex-shrink: 0;
     .book-view {
-      margin-bottom: 2vh;
+      margin-bottom: 1.6vh;
     }
   }
 }

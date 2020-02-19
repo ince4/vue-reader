@@ -37,6 +37,16 @@ const routes = [
     path: '/catalogue',
     meta: { hideTab: true },
     component: () => import('../views/Catalogue.vue')
+  },
+  {
+    name: 'discovery',
+    path: '/discovery',
+    component: () => import('../views/Discovery.vue')
+  },
+  {
+    name: 'booklist',
+    path: '/booklist',
+    component: () => import('../views/BookList.vue')
   }
   // {
   //   path: '/login',

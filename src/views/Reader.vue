@@ -3,7 +3,7 @@
     <!-- header -->
     <m-header v-show="onSetting" :title="bookTitle">
        <template v-slot:left>
-          <span class="iconfont icon-fanhui" @touchend="$router.go(-1)"/>
+          <span class="iconfont icon-fanhui" @click="$router.go(-1)"/>
       </template>
     </m-header>
     <loading v-if="!isLoaded"/>

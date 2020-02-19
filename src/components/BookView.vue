@@ -20,7 +20,6 @@ export default {
   padding-left: 2vw;
   width: 100vw;
   .cover {
-    margin-bottom: 2vh;
     width: 10vh;
     display: inline-block;
     vertical-align: top;

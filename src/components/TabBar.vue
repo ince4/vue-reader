@@ -9,7 +9,7 @@
                 <h3 class="iconfont icon-icon25"></h3>
                 书城
             </mt-tab-item>
-            <mt-tab-item id="login">
+            <mt-tab-item id="discovery">
                 <h3 class="iconfont icon-faxian4"></h3>
                 发现
             </mt-tab-item>

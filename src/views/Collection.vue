@@ -11,7 +11,7 @@
         <!-- Header -->
         <m-header>
           <template v-slot:left>
-            <span v-if="!isEditing">我的书架</span>
+            <h1 v-if="!isEditing">我的书架</h1>
             <span v-else class="iconfont icon-fanhui" @click="editing"/>
           </template>
           <template v-slot:right>

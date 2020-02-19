@@ -1,6 +1,9 @@
 import axios from 'axios'
 export default {
   // 根据接口获取书籍信息
+  getBookCats () {
+    return axios.get(`api/cats/lv2/statistics`)
+  },
   getBooks (gender, type, major, minor, start, limit) {
     return axios.get(`api/book/by-categories?gender=${gender}&type=${type}&major=${major}&minor=${minor}&start=${start}&limit=${limit}`)
   },
