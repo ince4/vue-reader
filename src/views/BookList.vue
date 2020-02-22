@@ -1,27 +1,27 @@
 <template>
   <div class="booklist">
     <loading v-if="!isLoaded"/>
-    <div v-else>
-    <!-- header -->
-    <m-header :title="this.$route.query.major">
-      <template v-slot:left>
-        <span class="iconfont icon-fanhui" @click="$router.go(-1)"/>
-      </template>
-    </m-header>
-    <!-- tags -->
-    <ul class="tab">
-      <li
-      class="tags"
-      v-for="item of typeList"
-      :key="item.id"
-      :class="{'active': tagActive === item.order, '': tagActive !== item.order}"
-      @click="tagSelected(item.order)">
-        {{item.name}}
-      </li>
-    </ul>
-    <!-- 书籍列表 -->
-    <book-list :booksData="booksData" :listLength="15"/>
-    </div>
+    <mt-loadmore :bottom-method="loadMore" @bottom-status-change="statusChange" ref="loadmore" v-else>
+      <!-- header -->
+      <m-header :title="this.$route.query.major">
+        <template v-slot:left>
+          <span class="iconfont icon-fanhui" @click="$router.go(-1)"/>
+        </template>
+      </m-header>
+      <!-- tags -->
+      <ul class="tab">
+        <li
+        class="tags"
+        v-for="item of typeList"
+        :key="item.id"
+        :class="{'active': tagActive === item.order, '': tagActive !== item.order}"
+        @click="tagSelected(item.order)">
+          {{item.name}}
+        </li>
+      </ul>
+      <!-- 书籍列表 -->
+      <book-list :booksData="booksData" :listLength="displayNum"/>
+    </mt-loadmore>
   </div>
 </template>
 <script>
@@ -62,7 +62,9 @@ export default {
           name: '包月'
         }
       ],
-      tagActive: 0
+      tagActive: 0,
+      displayNum: 15,
+      maxDistance: 80
     }
   },
   created () {
@@ -82,10 +84,27 @@ export default {
       this.tagActive = order
       this.isLoaded = false
       api.getBooks(this.$route.query.gender, this.typeList[this.tagActive].id, this.$route.query.major, '', 0, 15)
-      .then(res => {
-        this.booksData = res.data.books
-        this.isLoaded = true
-      })
+        .then(res => {
+          this.booksData = res.data.books
+          this.isLoaded = true
+        })
+    },
+    statusChange: function (status) {
+      if (status === 'pull') {
+        this.$refs.loadmore.onBottomLoaded()
+      }
+    },
+    loadMore: function () {
+      this.$refs.loadmore.maxDistance = this.maxDistance
+      this.$refs.loadmore.bottomLoadingText = '载入中...'
+      this.displayNum = this.displayNum + 15 > 50 ? 50 : this.displayNum + 15
+      api.getBooks(this.$route.query.gender, this.typeList[this.tagActive].id, this.$route.query.major, '', 0, this.displayNum)
+        .then(res => {
+          this.booksData = res.data.books
+          this.isLoaded = true
+          // this.$forceUpdate()
+        })
+      this.$refs.loadmore.onBottomLoaded()
     }
   }
 }

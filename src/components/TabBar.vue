@@ -13,7 +13,7 @@
                 <h3 class="iconfont icon-faxian4"></h3>
                 发现
             </mt-tab-item>
-            <mt-tab-item id="我的">
+            <mt-tab-item id="ranklist">
                 <h3 class="iconfont icon-changxiao"></h3>
                 排行
             </mt-tab-item>

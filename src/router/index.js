@@ -47,6 +47,11 @@ const routes = [
     name: 'booklist',
     path: '/booklist',
     component: () => import('../views/BookList.vue')
+  },
+  {
+    name: 'ranklist',
+    path: '/ranklist',
+    component: () => import('../views/RankList.vue')
   }
   // {
   //   path: '/login',

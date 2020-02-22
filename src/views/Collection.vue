@@ -194,6 +194,7 @@ export default {
       margin-top: 9vh;
       .book {
         position: relative;
+        margin-bottom: 1vh;
         .check-box {
           color: rgb(105, 105, 105);
           font-size: 4vh;
