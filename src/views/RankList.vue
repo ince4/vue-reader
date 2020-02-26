@@ -44,7 +44,7 @@ export default {
     }
   },
   created () {
-   this.getRankingId(this.activeIndex)
+    this.getRankingId(this.activeIndex)
   },
   components: {
     'm-header': Header,
@@ -55,7 +55,8 @@ export default {
     getRankingId: function (index) {
       api.getRankingId()
         .then(res => {
-          this.rankType = res.data.picture.slice(0,5)
+          console.log(res.data)
+          this.rankType = res.data.male.slice(0, 5)
           this.getRankingBooks(this.rankType[index]._id)
         })
     },
