@@ -45,10 +45,13 @@ table {
 	border-spacing: 0;
 }
 html, body {
-  }
+}
 a {
 	text-decoration: none;
 	-webkit-tap-highlight-color:transparent;
+}
+a:-webkit-any-link {
+    color: inherit;
 }
 img {
 	user-select: none;

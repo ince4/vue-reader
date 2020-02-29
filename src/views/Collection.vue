@@ -18,6 +18,7 @@
             <span v-if="!isEditing" @click="popUp" class="iconfont icon-xiazai9"/>
           </template>
         </m-header>
+        <!-- 下拉列表 -->
         <mt-popup v-model="popupVisible" popup-transition="popup-fade" :modal=false>
           <div class="down">
             <div class="batch" @click="editing">

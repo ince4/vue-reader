@@ -148,6 +148,7 @@ export default {
     overflow-x: hidden;
     padding: 3vh 5vw;
     line-height: 1.5;
+    height: 93vh;
     h1 {
       font-weight: 400;
       color: #333;

@@ -54,7 +54,7 @@ export default {
         .then(res => {
           this.bookTitle = res.data.title
           this.getBookSources(bookId)
-          console.log('书籍信息', res.data)
+          // console.log('书籍信息', res.data)
         })
     },
     // 获取书源
@@ -62,7 +62,7 @@ export default {
       api.getBookSources(bookId)
         .then(res => {
           this.getBookChapters(res.data[0]._id)
-          console.log('书籍信息', res.data)
+          // console.log('书籍信息', res.data)
         })
     },
     // 根据书源获取章节

@@ -74,14 +74,13 @@ export default {
       let index = this.sizeRange.indexOf(this.fontSize) + value
       if (this.sizeRange[index]) {
         this.$emit('fontSizeChange', this.sizeRange[index])
-      } else {
-        console.log('no')
       }
     },
     goToCatalogue () {
       this.$router.push({
         name: 'catalogue',
-        query: { bookId: this.$route.query.bookId } })
+        query: { bookId: this.$route.query.bookId }
+      })
     }
   }
 }

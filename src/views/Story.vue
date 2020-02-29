@@ -3,15 +3,15 @@
     <loading v-if="!isLoaded"/>
     <div class="story" ref="story" v-else>
       <!-- Header -->
-      <m-header>
+      <m-header  v-if="!isSearching">
         <template v-slot:left>
           书籍推荐
         </template>
         <template v-slot:right>
-          <span class="iconfont icon-sousuo1"/>
+          <span class="iconfont icon-sousuo1" @click="searchBoxToggle"/>
         </template>
       </m-header>
-
+      <search v-else @stopSearching="searchBoxToggle"></search>
       <!-- 广告轮播 -->
       <swiper-ads class="ads">
         <template v-slot:ad1>
@@ -21,7 +21,7 @@
           <img class="ad" src="../assets/images/20200124011353134.jpg" alt="春节打折"/>
         </template>
       </swiper-ads>
-
+      <!-- 推荐栏 -->
       <recommandations-bar :booksData="recommandationsData">
         <template v-slot:icon>
           <span class="iconfont icon-xiaoshuo5"></span>
@@ -30,7 +30,7 @@
           主编力推
         </template>
       </recommandations-bar>
-
+      <!-- 书籍列表 -->
       <book-list :booksData="bookListData1" :listLength="3">
         <template v-slot:icon>
           <span class="iconfont icon-changxiaopaiming"></span>
@@ -39,11 +39,11 @@
           畅销精选
         </template>
       </book-list>
-      <!--  -->
+      <!-- bar -->
       <aside>
         <img src="../assets/images/20190301073429442.jpg" alt="书单">
       </aside>
-
+      <!-- 推荐书籍轮播 -->
       <book-swiper :booksData="bookListData2">
         <template v-slot:icon>
           <span class="iconfont icon-books"></span>
@@ -52,7 +52,6 @@
           潜力新书
         </template>
       </book-swiper>
-
       <book-swiper :booksData="bookListData3">
         <template v-slot:icon>
           <span class="iconfont icon-tuijian1"></span>
@@ -66,6 +65,7 @@
 </template>
 <script>
 import Header from '../components/Header'
+import Search from '../components/Search'
 import Ads from '../components/Story/Ads'
 import RecommandationsBar from '../components/Story/RecommandationsBar'
 import BookList from '../components/BookList'
@@ -82,7 +82,8 @@ export default {
       bookListData1: [],
       bookListData2: [],
       bookListData3: [],
-      scroll: 0
+      scroll: 0,
+      isSearching: false
     }
   },
   components: {
@@ -91,7 +92,8 @@ export default {
     RecommandationsBar,
     BookList,
     BookSwiper,
-    Loading
+    Loading,
+    Search
   },
   methods: {
     // 请求相应排行榜下的书籍
@@ -102,6 +104,9 @@ export default {
         api.getRankingBooks(this.rankings.male[3]._id), // 潜力新书
         api.getRankingBooks(this.rankings.male[10]._id) // 最近更新
       ]
+    },
+    searchBoxToggle: function () {
+      this.isSearching = !this.isSearching
     }
   },
   created () {
@@ -129,18 +134,17 @@ export default {
     if (this.scroll !== 0) {
       this.$refs.story.scrollTop = this.scroll
     }
+    // console.log(this.scroll)
   },
   beforeRouteLeave (to, from, next) {
-    if (this.scroll !== 0) {
-      this.scroll = this.$refs.story.scrollTop
-    }
+    this.scroll = this.$refs.story.scrollTop
     next()
   }
 }
 </script>
 <style lang="scss" scoped>
 .story {
-  touch-action: pan-y;
+  // touch-action: pan-y;
   @include wrap-scroll;
   .header {
     z-index: 9;
