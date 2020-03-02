@@ -11,31 +11,31 @@
 
 收集
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection3(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection2(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection3(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection2(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
 
 书城
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_story(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_story2(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_story(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_story2(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
 
 发现
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_discovery(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_discovery(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
 
 排行
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_ranklist(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_ranklist(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
 
 书籍
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_book(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_book(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
 
 阅读
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_reader(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_reader(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
 
 目录
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_catalogue(iPhone 6_7_8 Plus).png" alt="应用截图" width="200">
+<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_catalogue(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
