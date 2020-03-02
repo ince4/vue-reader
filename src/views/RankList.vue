@@ -1,7 +1,8 @@
 <template>
   <div class="ranklist">
     <div>
-      <m-header>
+      <!-- header -->
+      <m-header v-if="!isSearching">
         <template v-slot:left>
           排行
         </template>
@@ -9,6 +10,8 @@
           <span class="iconfont icon-sousuo1"/>
         </template>
       </m-header>
+      <!-- 搜索 -->
+      <search v-else @stopSearching="searchBoxToggle"></search>
       <div class="wrapper">
         <div class="rankType">
           <div
@@ -31,6 +34,7 @@
 <script>
 import Loading from '../components/Loading'
 import Header from '../components/Header'
+import Search from '../components/Search'
 import BookList from '../components/BookList'
 import api from '../api/api.js'
 export default {
@@ -40,7 +44,8 @@ export default {
       isLoaded: false,
       rankType: [],
       booksData: [],
-      activeIndex: 0
+      activeIndex: 0,
+      isSearching: false
     }
   },
   created () {
@@ -49,7 +54,8 @@ export default {
   components: {
     'm-header': Header,
     Loading,
-    BookList
+    BookList,
+    Search
   },
   methods: {
     getRankingId: function (index) {
@@ -72,6 +78,9 @@ export default {
       this.isLoaded = false
       this.activeIndex = index
       this.getRankingId(this.activeIndex)
+    },
+    searchBoxToggle: function () {
+      this.isSearching = !this.isSearching
     }
   }
 }

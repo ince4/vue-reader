@@ -1,24 +1,10 @@
 # vue-reader
 
-## Project setup
-```
-npm install
-```
+## 介绍
+该项目是一个基于Vue框架开发的移动平台小说阅读应用，是在vue框架及其相关技术的学习过程中开发的前端项目。拥有书籍阅读、书籍推荐、书籍排行、书籍分类、书籍搜索、书籍收藏等一系列功能。其中书籍信息相关数据均调用自追书神器api。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 演示地址
+暂无在线预览方式
+请通过开发工具模拟使用手机浏览器使用
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 应用截图

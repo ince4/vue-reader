@@ -11,6 +11,7 @@
           <span class="iconfont icon-sousuo1" @click="searchBoxToggle"/>
         </template>
       </m-header>
+      <!-- 搜索 -->
       <search v-else @stopSearching="searchBoxToggle"></search>
       <!-- 广告轮播 -->
       <swiper-ads class="ads">
@@ -137,7 +138,9 @@ export default {
     // console.log(this.scroll)
   },
   beforeRouteLeave (to, from, next) {
-    this.scroll = this.$refs.story.scrollTop
+    if (this.isLoaded) {
+      this.scroll = this.$refs.story.scrollTop
+    }
     next()
   }
 }

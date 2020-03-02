@@ -3,7 +3,7 @@
     <loading v-if="!isLoaded"/>
     <div v-else>
     <!-- header -->
-    <m-header>
+    <m-header v-if="!isSearching">
        <template v-slot:left>
           发现
         </template>
@@ -11,6 +11,8 @@
           <span class="iconfont icon-sousuo1"/>
         </template>
     </m-header>
+    <!-- 搜索 -->
+    <search v-else @stopSearching="searchBoxToggle"></search>
     <!-- 分区 -->
     <section class="class" v-for="(item, index) of cats" :key="index">
       <h1>{{ item.name }}</h1>
@@ -30,6 +32,7 @@
 <script>
 import Loading from '../components/Loading'
 import Header from '../components/Header'
+import Search from '../components/Search'
 import api from '../api/api.js'
 export default {
   name: 'discovery',
@@ -52,7 +55,8 @@ export default {
           name: '出版',
           data: []
         }
-      ]
+      ],
+      isSearching: false
     }
   },
   created () {
@@ -66,9 +70,13 @@ export default {
   },
   components: {
     'm-header': Header,
-    Loading
+    Loading,
+    Search
   },
   methods: {
+    searchBoxToggle: function () {
+      this.isSearching = !this.isSearching
+    }
   }
 }
 </script>

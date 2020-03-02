@@ -7,10 +7,10 @@
   </div>
 </template>
 <script>
-import { Spinner } from 'mint-ui'
+// import { Spinner } from 'mint-ui'
 export default {
   components: {
-    'mt-spinner': Spinner
+    // 'mt-spinner': Spinner
   }
 }
 </script>

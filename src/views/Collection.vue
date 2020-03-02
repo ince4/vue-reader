@@ -77,19 +77,18 @@ export default {
       isLoaded: true,
       popupVisible: false,
       isEditing: false,
-      booksData: []
+      booksData: [],
+      isEmpty: true
     }
   },
   computed: {
     collections () {
       return this.$store.state.bookCollections
-    },
-    isEmpty () {
-      return !this.$store.state.bookCollections.size
     }
   },
   created () {
     this.booksData = this.fromOriginCollections(this.collections)
+    this.isEmpty = !this.$store.state.bookCollections.size
   },
   components: {
     Loading,
@@ -121,6 +120,7 @@ export default {
     editing: function () {
       this.isEditing = !this.isEditing
       this.popupVisible = false
+      this.isEmpty = !this.$store.state.bookCollections.size
     },
     thisChecked: function (item) {
       // this.$set(item, 'isChecked', !isChecked)

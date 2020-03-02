@@ -28,13 +28,13 @@ export default {
     .mint-header-title {
       font-weight: bold;
       font-size: 2.4vh;
-      letter-spacing: .3vw;
+      // letter-spacing: .3vw;
       line-height: 2.6vh;
     }
     .left {
       font-size: 2.4vh;
       font-weight: 600;
-      letter-spacing: 0.4vw;
+      // letter-spacing: 0.4vw;
       padding-left: 1.6vw;
     }
     h3 {
