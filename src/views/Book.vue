@@ -1,6 +1,5 @@
 <template>
   <div class="book">
-    <!-- header -->
     <m-header :title="bookData.title">
       <template v-slot:left>
           <span class="iconfont icon-fanhui" @touchend="$router.go(-1)"/>
@@ -8,65 +7,68 @@
     </m-header>
     <loading v-if="!isLoaded"/>
     <div class="wrapper" v-else>
-      <!-- 书籍基本信息 -->
-      <div class="basic-info">
-          <!-- 封面 -->
-          <img class="cover" :src="HOST+bookData.cover"/>
-          <!-- 书籍状态 -->
-          <div class="info">
-            <h2 class="title">{{ bookData.title }}</h2>
-            <h3 class="author">{{ bookData.author }} 著</h3>
-            <p class="book-status">
-              {{ (bookData.wordCount/10000).toFixed(1) }}万字 / {{bookData.isSerial ? '连载中' : '已完结'}}
-              <br>人气{{ (bookData.latelyFollower/10000).toFixed(1) }}万 #{{bookData.majorCate}}#
-            </p>
+      <!-- header -->
+      <div class="content">
+        <!-- 书籍基本信息 -->
+        <div class="basic-info">
+            <!-- 封面 -->
+            <img class="cover" :src="HOST+bookData.cover"/>
+            <!-- 书籍状态 -->
+            <div class="info">
+              <h2 class="title">{{ bookData.title }}</h2>
+              <h3 class="author">{{ bookData.author }} 著</h3>
+              <p class="book-status">
+                {{ (bookData.wordCount/10000).toFixed(1) }}万字 / {{bookData.isSerial ? '连载中' : '已完结'}}
+                <br>人气{{ (bookData.latelyFollower/10000).toFixed(1) }}万 #{{bookData.majorCate}}#
+              </p>
+            </div>
+            <!-- blur -->
+            <div class="back" :style="{'backgroundImage':`url(${HOST}${bookData.cover})`}"></div>
+        </div>
+        <!-- 书籍数据 -->
+        <div class="data-bar">
+          <div class="book-data">
+            <span class="data-value">
+              {{ (bookData.rating.score/1).toFixed(1) }}
+              <span class="unit">分</span>
+            </span>
+            <h3 class="data-item">评分</h3>
           </div>
-          <!-- blur -->
-          <div class="back" :style="{'backgroundImage':`url(${HOST}${bookData.cover})`}"></div>
+          <div class="book-data">
+            <span class="data-value">
+              {{ bookData.chaptersCount }}
+            <span class="unit">章</span>
+            </span>
+            <h3 class="data-item">章节数</h3>
+          </div>
+          <div class="book-data">
+            <span class="data-value">
+              {{ (bookData.totalFollower/10000).toFixed(1) }}
+              <span class="unit">万</span>
+            </span>
+            <h3 class="data-item">总点击</h3>
+          </div>
+        </div>
+        <!-- 简介 -->
+        <div class="intro">
+          <p :class="{'longIntro': longIntro}">
+            {{bookData.longIntro}}
+          </p>
+          <span class="iconfont icon-ICon-"
+          :class="{'longIntro': longIntro}"
+          @click="lineClampToggle"/>
+        </div>
+        <!-- 目录 -->
+        <router-link :to="{name: 'catalogue',query:{bookId: this.$route.params.bookId }}">
+          <div class="catalogue">
+            <span class="cat">目录</span>
+            <span class="last-chapter">{{bookData.updated}} / {{bookData.lastChapter}}</span>
+            <span class="iconfont icon-ICon-"/>
+          </div>
+        </router-link>
+        <!-- 底部 fixed -->
+        <bottom :bookData="bookData"/>
       </div>
-      <!-- 书籍数据 -->
-      <div class="data-bar">
-        <div class="book-data">
-          <span class="data-value">
-            {{ (bookData.rating.score/1).toFixed(1) }}
-            <span class="unit">分</span>
-          </span>
-          <h3 class="data-item">评分</h3>
-        </div>
-        <div class="book-data">
-          <span class="data-value">
-            {{ bookData.chaptersCount }}
-          <span class="unit">章</span>
-          </span>
-          <h3 class="data-item">章节数</h3>
-        </div>
-        <div class="book-data">
-          <span class="data-value">
-            {{ (bookData.totalFollower/10000).toFixed(1) }}
-            <span class="unit">万</span>
-          </span>
-          <h3 class="data-item">总点击</h3>
-        </div>
-      </div>
-      <!-- 简介 -->
-      <div class="intro">
-        <p :class="{'longIntro': longIntro}">
-          {{bookData.longIntro}}
-        </p>
-        <span class="iconfont icon-ICon-"
-        :class="{'longIntro': longIntro}"
-        @click="lineClampToggle"/>
-      </div>
-      <!-- 目录 -->
-      <router-link :to="{name: 'catalogue',query:{bookId: this.$route.params.bookId }}">
-        <div class="catalogue">
-          <span class="cat">目录</span>
-          <span class="last-chapter">{{bookData.updated}} / {{bookData.lastChapter}}</span>
-          <span class="iconfont icon-ICon-"/>
-        </div>
-      </router-link>
-      <!-- 底部 fixed -->
-      <bottom :bookData="bookData"/>
     </div>
   </div>
 </template>
@@ -109,6 +111,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .book {
+  height: 100vh;
+}
+.wrapper {
   @include wrap-scroll;
   background: #f8f8f8;
   height: calc( 92vh - #{$HeaderHeight} );
@@ -145,6 +150,11 @@ export default {
         font-weight: bold;
         line-height: 4vh;
         letter-spacing: 1px;
+        text-overflow:ellipsis;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
       .author {
         font-size: 1.8vh;

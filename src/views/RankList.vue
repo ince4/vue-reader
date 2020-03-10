@@ -7,7 +7,7 @@
           排行
         </template>
         <template v-slot:right>
-          <span class="iconfont icon-sousuo1"/>
+          <span class="iconfont icon-sousuo1" @click="searchBoxToggle"/>
         </template>
       </m-header>
       <!-- 搜索 -->

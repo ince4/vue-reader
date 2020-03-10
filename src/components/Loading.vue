@@ -7,16 +7,14 @@
   </div>
 </template>
 <script>
-// import { Spinner } from 'mint-ui'
 export default {
-  components: {
-    // 'mt-spinner': Spinner
-  }
 }
 </script>
 <style lang="scss" scoped>
 .loading {
-  height: calc( 100vh - #{$tabBarHeight} );
+  position: absolute;
+  top: 0vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
