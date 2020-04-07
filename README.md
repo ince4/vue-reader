@@ -15,26 +15,32 @@
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection2.png)
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection.png)
 
+
 ### 书城
 
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_story.png)
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_story2.png)
 
+
 ### 发现
 
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_discovery.png)
+
 
 ### 排行
 
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_ranklist.png)
 
+
 ### 书籍
 
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_book.png)
 
+
 ### 阅读
 
 ![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_reader.png)
+
 
 ### 目录
 
