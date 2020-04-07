@@ -10,10 +10,10 @@
 ## 应用截图
 
 收集
+![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection3(iPhone 6_7_8 Plus).png)
+![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection2(iPhone 6_7_8 Plus).png)
+![应用截图](https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection(iPhone 6_7_8 Plus).png)
 
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection3(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection2(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
-<img src="https://github.com/ince4/vue-reader/blob/master/screenshots/localhost_8080_collection(iPhone 6_7_8 Plus).png" alt="应用截图" width="300">
 
 书城
 
