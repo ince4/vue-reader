@@ -1,7 +1,5 @@
 <template>
   <div class="booklist">
-    <loading v-if="!isLoaded"/>
-    <mt-loadmore :bottom-method="loadMore" @bottom-status-change="statusChange" ref="loadmore" v-else>
       <!-- header -->
       <m-header :title="this.$route.query.major">
         <template v-slot:left>
@@ -20,8 +18,10 @@
         </li>
       </ul>
       <!-- 书籍列表 -->
-      <book-list :booksData="booksData" :listLength="displayNum"/>
-    </mt-loadmore>
+      <loading v-if="!isLoaded"/>
+      <mt-loadmore :bottom-method="loadMore" @bottom-status-change="statusChange" ref="loadmore" v-else>
+        <book-list :booksData="booksData" :listLength="displayNum"/>
+      </mt-loadmore>
   </div>
 </template>
 <script>
@@ -112,14 +112,15 @@ export default {
 <style lang="scss" scoped>
 .booklist {
   @include wrap-scroll;
-  height: calc(100vh - 85px);
-  margin-top: calc(30px);
+  height: calc(100vh - 125px);
+  margin-top: calc(70px);
   .tab {
     width: 100vw;
     position: fixed;
     background: rgb(255, 255, 255);
     height: 40px;
     top: 6.8vh;
+    z-index: 5;
     white-space: nowrap;
     .tags {
       display: inline-block;
